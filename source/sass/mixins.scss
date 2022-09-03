@@ -42,6 +42,30 @@
   }
 }
 
+@mixin min-desktop {
+  @media (min-width: $vp-1200) {
+    @content;
+  }
+}
+
+@mixin max-tablet {
+  @media (max-width: $vp-1199) {
+    @content;
+  }
+}
+
+@mixin min-tablet {
+  @media (min-width: $vp-768) {
+    @content;
+  }
+}
+
+@mixin max-mobile {
+  @media (max-width: $vp-767) {
+    @content;
+  }
+}
+
 // Mobile first
 
 // @mixin vp-375 {

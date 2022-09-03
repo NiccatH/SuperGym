@@ -1,0 +1,181 @@
+.trainers__wrapper {
+  padding-bottom: 120px;
+
+  @include max-tablet {
+    padding: 0 101px 100px 101px;
+  }
+
+  @include max-mobile {
+    padding: 0 47px 70px 47px;
+  }
+}
+
+.trainers h2 {
+  margin: 0 0 50px 3px;
+  font-family: $ff-bebas-neue;
+  font-weight: 700;
+  font-size: 49px;
+  line-height: 49px;
+  letter-spacing: 0.03em;
+
+  @include max-tablet {
+    margin-bottom: 40px;
+    margin-left: 0;
+    font-size: 42px;
+    line-height: 42px;
+    text-align: center;
+  }
+
+  @include max-mobile {
+    margin-bottom: 42px;
+    font-size: 32px;
+    line-height: 32px;
+  }
+}
+
+.trainers__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  color: $color-default-white;
+
+  @include max-tablet {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: minmax(min-content, max-content);
+    gap: 30px;
+  }
+
+  @include max-mobile {
+    display: block;
+  }
+}
+
+.trainers__card {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover .trainers__content {
+      z-index: 1;
+      box-shadow: 0 4px 4px $color-default-black-opacity;
+    }
+
+    &:hover figcaption {
+      display: none;
+    }
+  }
+
+  &:focus .trainers__content,
+  &:active .trainers__content {
+    box-shadow: 0 4px 4px $color-default-black-opacity;
+    z-index: 1;
+  }
+
+  &:focus figcaption,
+  &:active figcaption {
+    display: none;
+  }
+}
+
+.trainers__figure {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+.trainers__img-wrapper {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+.trainers__figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.trainers__figure figcaption {
+  padding: 0 20px 23px 20px;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  align-self: flex-end;
+  justify-self: center;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
+
+  @include max-tablet {
+    transform: translateX(4px);
+  }
+}
+
+.trainers__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 51px 17% 53px 21%;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  background: $color-saphire-opacity-light;
+  z-index: -1;
+
+  @include max-mobile {
+    padding: 42px 6% 43px 15%;
+  }
+}
+
+.trainers__content div {
+  margin-bottom: auto;
+  text-align: center;
+  transform: translateX(-4px);
+
+  @include max-tablet {
+    transform: translateX(-10px);
+  }
+}
+
+.trainers__content p {
+  margin: 0 0 -3px 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.trainers__content span {
+  font-size: 16px;
+  line-height: 24px;
+  color: $color-spindle;
+}
+
+.trainers__content ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.trainers__content li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 14px;
+  line-height: 21px;
+
+  &:not(:last-of-type) {
+    margin-bottom: 12px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: $color-default-white;
+  }
+}

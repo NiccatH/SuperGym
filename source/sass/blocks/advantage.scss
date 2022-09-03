@@ -1,0 +1,95 @@
+.advantage {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  column-gap: 32px;
+
+  @include max-tablet {
+    column-gap: 30px;
+  }
+
+  @include max-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &:not(.advantage--special-gradient) dt {
+    background: $advantage;
+    background-clip: text;
+  }
+
+  &--special-gradient dt {
+    background: $advantage-special;
+    background-clip: text;
+  }
+}
+
+.advantage dl {
+  margin: 0;
+
+  @include max-mobile {
+    text-align: center;
+  }
+}
+
+.advantage dt {
+  font-weight: 700;
+  font-size: 71px;
+  line-height: 106px;
+  width: fit-content;
+  color: transparent;
+
+  @include max-tablet {
+    font-size: 58px;
+    line-height: 87px;
+  }
+}
+
+.advantage dd {
+  margin: 0;
+  font-size: 14px;
+  line-height: 21px;
+  transform: translateY(-22px);
+
+  @include max-tablet {
+    transform: translateY(-19px);
+  }
+}
+
+.advantage h3 {
+  margin-top: 0;
+  margin-bottom: 7px;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 33px;
+
+  @include max-tablet {
+    margin-bottom: 1px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+.advantage p {
+  margin-top: 0;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+
+  @include max-tablet {
+    margin-bottom: 5px;
+  }
+}
+
+.advantage div {
+  margin-top: 20px;
+
+  @include max-tablet {
+    margin-top: 15px;
+  }
+
+  @include max-mobile {
+    margin-top: -12px;
+    text-align: center;
+  }
+}

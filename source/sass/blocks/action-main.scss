@@ -1,0 +1,84 @@
+.action-main {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: $color-default-white;
+  background: $color-torch-red;
+
+  @include max-tablet {
+    grid-template-columns: 41% 59%;
+  }
+
+  @include max-mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.action-main__column {
+  padding: 34px 45px 47px 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include max-tablet {
+    padding-right: 40px;
+  }
+
+  @include max-mobile {
+    padding: 34px 40px 47px 41px;
+    min-height: 299px;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+.action-main h3 {
+  margin-top: 0;
+  margin-bottom: 23px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 0;
+
+  @include max-mobile {
+    margin-bottom: 18px;
+    align-items: center;
+  }
+}
+
+.action-main small {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 44px;
+}
+
+.action-main b {
+  font-size: 70px;
+  line-height: 59px;
+}
+
+.action-main p {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 18px;
+  line-height: 25px;
+
+  @include max-mobile {
+    margin-bottom: 5px;
+  }
+}
+
+.action-main a {
+  font-size: 14px;
+  line-height: 16px;
+  color: $color-default-white;
+
+  &::after {
+    background: $color-default-white;
+  }
+}
+
+.action-main img {
+  object-fit: cover;
+  width: 100%;
+}

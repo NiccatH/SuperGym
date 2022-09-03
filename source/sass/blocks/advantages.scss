@@ -1,0 +1,145 @@
+.advantages {
+  background-color: $color-ghost-white;
+}
+
+.advantages__wrapper {
+  padding: 120px 0 92px 0;
+
+  @include max-tablet {
+    padding: 100px 45px 77px 45px;
+  }
+
+  @include max-mobile {
+    padding: 70px 0 55px 0;
+  }
+}
+
+.advantages h2 {
+  margin-top: 0;
+  margin-bottom: 41px;
+  font-family: $ff-bebas-neue;
+  font-weight: 700;
+  font-size: 49px;
+  line-height: 49px;
+  letter-spacing: 0.03em;
+  text-align: center;
+
+  @include max-tablet {
+    margin-bottom: 28px;
+    font-size: 42px;
+    line-height: 42px;
+  }
+
+  @include max-mobile {
+    margin-bottom: 20px;
+    font-size: 32px;
+    line-height: 32px;
+  }
+}
+
+.advantages ul {
+  margin: 0;
+  padding: 0 60px;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 240px 1fr;
+  gap: 109px 55px;
+
+  @include max-tablet {
+    padding: 0;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 27px;
+  }
+
+  @include max-mobile {
+    grid-template-columns: 1fr;
+    gap: unset;
+  }
+}
+
+.advantages li {
+  position: relative;
+
+  &:not(:first-of-type) {
+    @include max-mobile {
+      padding: 10px 45px 5px 45px;
+    }
+  }
+
+  &:first-of-type {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+
+    @include max-tablet {
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+      align-self: center;
+    }
+
+    @include max-mobile {
+      grid-column: unset;
+      grid-row: 3 / 4;
+    }
+  }
+
+  &:nth-of-type(2n+2) {
+    grid-column: 1 / 2;
+
+    @include max-tablet {
+      grid-column: unset;
+    }
+  }
+
+  &:nth-of-type(2n+3) {
+    grid-column: 3 / 4;
+
+    @include max-tablet {
+      grid-column: unset;
+    }
+  }
+
+  &:nth-of-type(2n+4)::before,
+  &:nth-of-type(2n+5)::before {
+    content: "";
+    position: absolute;
+    top: -55px;
+    height: 2px;
+    background-color: $color-crimson;
+    opacity: 0.2;
+
+    @include max-tablet {
+      display: none;
+    }
+  }
+
+  &:nth-of-type(2n+4)::before {
+    left: 0;
+    right: 3px;
+  }
+
+  &:nth-of-type(2n+5)::before {
+    left: 6px;
+    right: -1px;
+  }
+
+  &:nth-of-type(4n+2) > div {
+    padding-left: 26px;
+  }
+
+  &:nth-of-type(4n+4) > div {
+    padding-left: 19px;
+  }
+
+  &:nth-of-type(2n+3) > div {
+    padding-left: 5px;
+  }
+
+  &:nth-of-type(4n+2) > div,
+  &:nth-of-type(4n+4) > div,
+  &:nth-of-type(2n+3) > div {
+    @include max-tablet {
+      padding-left: unset;
+    }
+  }
+}

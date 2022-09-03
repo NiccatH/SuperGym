@@ -1,0 +1,71 @@
+.advantage-primary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: $color-resolution-blue;
+  color: $color-default-white;
+  margin-top: 28px;
+  padding: 35px 33px 53px 33px;
+
+  @include max-tablet {
+    margin: 0 auto;
+    width: 65%;
+    padding: 13px 130px 34px 130px;
+  }
+
+  @include max-mobile {
+    margin-top: 34px;
+    margin-bottom: 17px;
+    width: 100%;
+    padding: 18px 74px 38px 74px;
+  }
+}
+
+.advantage-primary h3 {
+  margin-top: 0;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include max-tablet {
+    margin-bottom: 13px;
+  }
+
+  @include max-mobile {
+    margin-bottom: 9px;
+  }
+}
+
+.advantage-primary b {
+  font-weight: 700;
+  font-size: 74px;
+  line-height: 111px;
+  margin-bottom: -16px;
+
+  @include max-tablet {
+    margin-bottom: -19px;
+  }
+
+  @include max-mobile {
+    margin-bottom: -23px;
+  }
+}
+
+.advantage-primary small {
+  font-size: 26px;
+  line-height: 150%;
+
+  @include max-tablet {
+    font-size: 22px;
+  }
+}
+
+.advantage-primary p {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}

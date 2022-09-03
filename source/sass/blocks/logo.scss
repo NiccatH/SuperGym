@@ -1,0 +1,14 @@
+.logo {
+  display: flex;
+}
+
+.logo__icon {
+  @include max-tablet {
+    width: 81px;
+    height: 18px;
+  }
+
+  @include max-mobile {
+    width: 67px;
+  }
+}

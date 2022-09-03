@@ -1,0 +1,58 @@
+.subscriptions {
+  position: relative;
+  text-align: center;
+  background: $color-ghost-white;
+  z-index: 0;
+}
+
+.subscriptions__wrapper {
+  padding: 120px 0;
+
+  @include max-tablet {
+    padding: 101px 45px 100px 45px;
+  }
+
+  @include max-mobile {
+    padding: 70px 15px;
+  }
+}
+
+.subscriptions h2 {
+  margin-top: 0;
+  margin-bottom: 33px;
+  font-family: $ff-bebas-neue;
+  font-weight: 700;
+  font-size: 49px;
+  line-height: 49px;
+  letter-spacing: 0.03em;
+
+  @include max-tablet {
+    margin-bottom: 27px;
+    font-size: 42px;
+    line-height: 42px;
+  }
+
+  @include max-mobile {
+    margin-bottom: 21px;
+    font-size: 32px;
+    line-height: 32px;
+  }
+}
+
+.subscriptions img {
+  position: absolute;
+  bottom: -17.5%;
+  right: 0;
+  z-index: -1;
+
+  @include max-tablet {
+    bottom: -7%;
+    right: 0;
+    width: 347px;
+    height: 445px;
+  }
+
+  @include max-mobile {
+    display: none;
+  }
+}

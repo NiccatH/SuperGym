@@ -1,0 +1,112 @@
+.form {
+  background: $color-sapphire;
+  color: $color-default-white;
+}
+
+.form__wrapper {
+  padding: 63px 170px 70px 103px;
+
+  @include min-desktop {
+    max-width: 683px;
+    margin-left: auto;
+  }
+
+  @include max-tablet {
+    padding: 71px 163px 69px 133px;
+  }
+
+  @include max-mobile {
+    padding: 70px 15px 69px 15px;
+  }
+}
+
+.form h2 {
+  margin-top: 0;
+  margin-bottom: 29px;
+  font-family: $ff-bebas-neue;
+  font-size: 49px;
+  line-height: 64px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  @include max-tablet {
+    margin-bottom: 32px;
+    font-size: 42px;
+    line-height: 42px;
+  }
+
+  @include max-mobile {
+    margin-bottom: 34px;
+    font-size: 32px;
+    line-height: 32px;
+  }
+}
+
+.form form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+  row-gap: 32px;
+
+  @include max-tablet {
+    column-gap: 60px;
+    row-gap: 31px;
+  }
+
+  @include max-mobile {
+    grid-template-columns: 1fr;
+    gap: 34px 0;
+  }
+}
+
+.form__form > div {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: -3px;
+    height: 1px;
+    background: $color-light-slate-grey;
+
+    @include max-tablet {
+      bottom: -1px;
+    }
+
+    @include max-mobile {
+      bottom: -3px;
+    }
+  }
+}
+
+.form input {
+  width: 100%;
+  padding: 5px 5px 5px 0;
+  border: none;
+  background: $color-sapphire;
+  color: $color-default-white;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+
+  &::placeholder {
+    color: $color-default-white;
+  }
+}
+
+.form button {
+  grid-column: 1 / -1;
+  padding: 18px;
+  font-size: 14px;
+  line-height: 16px;
+  box-shadow: 0 0 0 1.5px inset $color-default-white,
+    0 0 0 1.5px $color-default-white;
+
+  @include max-mobile {
+    margin-top: 8px;
+  }
+}
+

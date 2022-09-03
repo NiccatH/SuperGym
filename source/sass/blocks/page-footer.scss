@@ -1,0 +1,18 @@
+.page-footer {
+  background: $color-black-russian;
+}
+
+.page-footer__wrapper {
+  padding: 41px 0 42px 0;
+  display: flex;
+  justify-content: space-between;
+
+  @include max-tablet {
+    padding: 45px 39px 44px 45px;
+  }
+
+  @include max-mobile {
+    padding: 45px 15px 52px 11px;
+  }
+}
+

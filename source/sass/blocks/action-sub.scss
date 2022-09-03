@@ -1,0 +1,51 @@
+.action-sub {
+  height: 100%;
+  padding: 24px 28px 30px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 7px solid $color-default-white;
+  border-image: $border-gradient;
+  border-image-slice: 1;
+  color: $color-resolution-blue;
+
+  @include max-tablet {
+    min-height: 211px;
+  }
+
+  @include max-mobile {
+    padding-top: 35px;
+    padding-bottom: 41px;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.action-sub h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 26px;
+
+  @include max-mobile {
+    margin-bottom: 11px;
+  }
+}
+
+.action-sub p {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.action-sub a {
+  font-size: 12px;
+  line-height: 14px;
+  color: $color-resolution-blue;
+
+  &::after {
+    background: $color-resolution-blue;
+  }
+}

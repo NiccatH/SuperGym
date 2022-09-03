@@ -1,0 +1,13 @@
+.section-wrapper {
+  max-width: 1160px;
+  margin: 0 auto;
+
+  &--split {
+    max-width: 100%;
+
+    @include min-desktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

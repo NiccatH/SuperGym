@@ -1,0 +1,15 @@
+.optional-social {
+  list-style-type: none;
+}
+
+.optional-social li {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.optional-social a {
+  font-size: 12px;
+  line-height: 14px;
+  color: $color-default-white;
+}

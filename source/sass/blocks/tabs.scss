@@ -1,0 +1,270 @@
+.tabs__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 39px;
+
+  @include max-tablet {
+    margin-bottom: 44px;
+  }
+
+  @include max-mobile {
+    margin-bottom: 34px;
+  }
+}
+
+.tabs__nav ul {
+  position: relative;
+  margin: 0;
+  padding: 0 0 13px 0;
+  list-style-type: none;
+  display: flex;
+
+  @include max-tablet {
+    padding-bottom: 14px;
+  }
+
+  @include max-mobile {
+    justify-content: space-between;
+    min-width: 290px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: $color-grey;
+    opacity: 0.2;
+  }
+}
+
+.tabs__nav li {
+  &:not(:last-of-type) {
+    margin-right: 46px;
+
+    @include max-tablet {
+      margin-right: 55px;
+    }
+
+    @include max-mobile {
+      margin-right: 0;
+    }
+  }
+}
+
+.tabs__nav li:not(:last-of-type) * {
+  @include max-mobile {
+    padding-right: 7px;
+  }
+}
+
+.tabs__nav button {
+  position: relative;
+  padding: 0;
+  font-size: 20px;
+  line-height: 30px;
+  color: $color-saphire-opacity;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  @include max-tablet {
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  @include max-mobile {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &.is-active {
+    color: $color-sapphire;
+  }
+
+  &.is-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -13px;
+    height: 2px;
+    background-color: $color-crimson;
+
+    @include max-tablet {
+      bottom: -14px;
+    }
+  }
+}
+
+.tabs__content ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  @include max-tablet {
+    display: block;
+    padding: 0 118px;
+  }
+
+  @include max-mobile {
+    padding: 0;
+  }
+}
+
+.tabs__content li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 55px 10px 61px 10px;
+  background: $color-default-white;
+  border: 7px solid $color-default-white;
+
+  @include max-tablet {
+    padding-top: 56px;
+  }
+
+  @include max-mobile {
+    padding: 44px 33px 48px 33px;
+  }
+
+  &:not(:last-of-type) {
+    @include max-tablet {
+      margin-bottom: 40px;
+    }
+
+    @include max-mobile {
+      margin-bottom: 35px;
+    }
+  }
+
+  &:hover {
+    border-image: $border-gradient;
+    border-image-slice: 1;
+  }
+
+  &:focus-within {
+    border-image: $border-gradient;
+    border-image-slice: 1;
+  }
+
+  &:hover a,
+  &:focus-within a {
+    background: $buy-button;
+    color: $color-default-white;
+    box-shadow: 0 0 0 2px inset transparent,
+      0 0 0 2px transparent;
+  }
+}
+
+.tabs__content h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 29px;
+
+  @include max-tablet {
+    line-height: 29px;
+  }
+
+  @include max-mobile {
+    font-size: 22px;
+    line-height: 24px;
+  }
+}
+
+.tabs__content p {
+  margin-top: 0;
+  margin-bottom: 66px;
+  font-size: 16px;
+  line-height: 24px;
+  color: $color-chambray;
+
+  @include max-mobile {
+    margin-bottom: 54px;
+  }
+}
+
+.tabs__content a {
+  width: 206px;
+  padding: 25px 20px;
+  color: $color-sapphire;
+  box-shadow: 0 0 0 1px inset $color-sapphire,
+    0 0 0 1px $color-sapphire;
+}
+
+.tabs__content div {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, min-content);
+  align-items: center;
+  column-gap: 16px;
+  margin-bottom: 34px;
+  margin-left: -1px;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 90px;
+  color: $color-egyptian-blue;
+  text-align: left;
+  z-index: 0;
+
+  @include max-tablet {
+    grid-template-columns: 1fr 30px;
+    column-gap: 14px;
+  }
+
+  @include max-mobile {
+    margin-bottom: 30px;
+    grid-template-columns: 1fr 24px;
+  }
+
+  @include max-mobile {
+    font-size: 48px;
+    line-height: 72px;
+  }
+
+  &::after {
+    content: attr(data-price);
+    position: absolute;
+    bottom: -6px;
+    left: -18px;
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 150px;
+    color: $color-whisper;
+    opacity: 0.48;
+    z-index: -1;
+
+    @include max-tablet {
+      bottom: -8px;
+      left: -20px;
+    }
+
+    @include max-mobile {
+      bottom: -4px;
+      left: -14px;
+      font-size: 80px;
+      line-height: 120px;
+    }
+  }
+}
+
+.tabs__content div > svg {
+  @include max-mobile {
+    width: 24px;
+    height: 33px;
+  }
+}
+
+.tabs__content div > span {
+  @include max-mobile {
+    transform: translateX(4px);
+  }
+}
