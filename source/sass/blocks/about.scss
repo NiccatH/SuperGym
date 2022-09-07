@@ -105,8 +105,12 @@
   position: absolute;
   bottom: -115px;
   left: -62px;
+  min-width: 364px;
+  min-height: 228px;
 
   @include max-tablet {
+    min-width: 266px;
+    min-height: 167px;
     width: 39.5%;
     bottom: -83px;
     left: 50%;
@@ -117,6 +121,7 @@
     position: relative;
     bottom: unset;
     left: unset;
+    min-width: 320px;
     width: 100%;
     margin-top: 40px;
     transform: none;
@@ -136,7 +141,7 @@
 
 .about__video-overlay {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .about__video-overlay div {

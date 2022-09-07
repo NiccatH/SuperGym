@@ -1723,6 +1723,8 @@ button,
   position: absolute;
   bottom: -115px;
   left: -62px;
+  min-width: 364px;
+  min-height: 228px;
 }
 
 .about__video-cover iframe {
@@ -1739,8 +1741,8 @@ button,
 .about__video-overlay {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr;
-  grid-template-columns: 1fr;
+  -ms-grid-columns: minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .about__video-overlay div {
@@ -3367,6 +3369,8 @@ button,
   }
 
   .about__video-cover {
+    min-width: 266px;
+    min-height: 167px;
     width: 39.5%;
     bottom: -83px;
     left: 50%;
@@ -3892,6 +3896,7 @@ button,
     position: relative;
     bottom: unset;
     left: unset;
+    min-width: 320px;
     width: 100%;
     margin-top: 40px;
     -webkit-transform: none;
