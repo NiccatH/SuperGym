@@ -1,22 +1,20 @@
-import {iosVhFix} from './utils/ios-vh-fix';
-import {initModals} from './modules/modals/init-modals';
+import {initVideo} from './modules/video/video';
+import {initTabs} from './modules/tabs/tabs';
+import {initPhoneValidation} from './modules/phone/phone';
 
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
-
-  // Utils
-  // ---------------------------------
-
-  iosVhFix();
-
   // Modules
   // ---------------------------------
+
+  initVideo();
+  initTabs();
+  initPhoneValidation();
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
-    initModals();
   });
 });
 

@@ -43,6 +43,19 @@
     box-shadow: 0 0 0 1px inset $color-default-white,
       0 0 0 1px $color-default-white;
   }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover:not(:active) {
+      background: $color-default-white;
+      color: $color-sapphire;
+      box-shadow: 0 0 0 2px inset $color-resolution-blue,
+        0 0 0 2px $color-resolution-blue;
+    }
+  }
+
+  &:active {
+    opacity: 0.25;
+  }
 }
 
 .promo img {
@@ -196,4 +209,3 @@
     background: $color-default-white;
   }
 }
-

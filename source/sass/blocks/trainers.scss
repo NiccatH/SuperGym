@@ -2,16 +2,18 @@
   padding-bottom: 120px;
 
   @include max-tablet {
-    padding: 0 101px 100px 101px;
+    padding: 0 45px 101px 45px;
   }
 
   @include max-mobile {
-    padding: 0 47px 70px 47px;
+    padding: 0 15px 70px 15px;
   }
 }
 
 .trainers h2 {
-  margin: 0 0 50px 3px;
+  max-width: 1160px;
+  padding-left: 3px;
+  margin: 0 auto 50px auto;
   font-family: $ff-bebas-neue;
   font-weight: 700;
   font-size: 49px;
@@ -34,40 +36,42 @@
 }
 
 .trainers__cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  position: relative;
   color: $color-default-white;
+  padding: 0 56px;
 
   @include max-tablet {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: minmax(min-content, max-content);
-    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
   }
 
   @include max-mobile {
-    display: block;
+    padding: 0 32px;
+    max-width: 360px;
   }
 }
 
 .trainers__card {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
 
-  @media (hover: hover), screen and (min-width: 0\0) {
-    &:hover .trainers__content {
-      z-index: 1;
-      box-shadow: 0 4px 4px $color-default-black-opacity;
-    }
-
-    &:hover figcaption {
-      display: none;
-    }
+  @include max-mobile {
+    min-height: 274px;
   }
 
-  &:focus .trainers__content,
+  &:hover .trainers__content {
+    z-index: 1;
+    box-shadow: 0 4px 4px $color-default-black-opacity;
+    background: $color-saphire-opacity-light;
+  }
+
+  &:hover figcaption {
+    display: none;
+  }
+
   &:active .trainers__content {
     box-shadow: 0 4px 4px $color-default-black-opacity;
+    background: $color-saphire-opacity-light;
     z-index: 1;
   }
 
@@ -94,6 +98,10 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+
+  @include min-desktop {
+    min-height: 294px;
+  }
 }
 
 .trainers__figure figcaption {
@@ -113,27 +121,59 @@
 }
 
 .trainers__content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 51px 17% 53px 21%;
   grid-column: 1 / -1;
   grid-row: 1 / -1;
-  background: $color-saphire-opacity-light;
+  padding: 5px 5px 0 5px;
   z-index: -1;
 
+  @include vp-1366 {
+    padding-top: 51px;
+  }
+
+  @include min-desktop {
+    padding-top: 30px;
+  }
+
+  @include max-tablet {
+    padding-top: 51px;
+  }
+
   @include max-mobile {
-    padding: 42px 6% 43px 15%;
+    padding-top: 42px;
   }
 }
 
-.trainers__content div {
-  margin-bottom: auto;
-  text-align: center;
-  transform: translateX(-4px);
+.trainers__content-overflow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  max-height: 240px;
+  scrollbar-width: thin;
+  scrollbar-color: $color-spindle transparent;
 
-  @include max-tablet {
-    transform: translateX(-10px);
+  @include min-desktop {
+    max-height: 220px;
+  }
+
+  @include max-mobile {
+    max-height: 210px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-spindle;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: $color-light-slate-grey;
   }
 }
 
@@ -142,20 +182,43 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 27px;
+  text-align: center;
+
+  @include max-tablet {
+    margin-left: -7px;
+  }
+
+  @include max-mobile {
+    margin-left: 4px;
+  }
 }
 
 .trainers__content span {
   font-size: 16px;
   line-height: 24px;
   color: $color-spindle;
+  text-align: center;
+
+  @include max-tablet {
+    margin-left: -7px;
+  }
+
+  @include max-mobile {
+    margin-left: 2px;
+  }
 }
 
 .trainers__content ul {
   margin: 0;
-  padding: 0;
+  padding: 33px 20px 0 50px;
   list-style-type: none;
-  max-height: 200px;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include max-mobile {
+    padding: 33px 10px 0 30px;
+  }
 }
 
 .trainers__content li {
@@ -165,7 +228,7 @@
   line-height: 21px;
 
   &:not(:last-of-type) {
-    margin-bottom: 12px;
+    margin-bottom: 13px;
   }
 
   &::before {

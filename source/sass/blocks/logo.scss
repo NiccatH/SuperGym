@@ -1,5 +1,21 @@
 .logo {
   display: flex;
+  fill: $color-default-white;
+
+  &--curren-page {
+    pointer-events: none;
+    cursor: default;
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover:not(:active) {
+      opacity: 0.5;
+    }
+  }
+
+  &:active {
+    opacity: 0.25;
+  }
 }
 
 .logo__icon {

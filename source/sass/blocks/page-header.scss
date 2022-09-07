@@ -13,20 +13,29 @@
 .page-header__wrapper {
   padding-top: 31px;
   padding-bottom: 52px;
+  display: grid;
+  grid-template-columns: 4fr 5fr 140px;
+  column-gap: 60px;
 
   @include max-tablet {
-    padding: 40px 45px 83px 45px;
+    padding: 40px 45px 81px 45px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 27px;
   }
 
   @include max-mobile {
     padding: 20px 15px 81px 15px;
+    grid-template-columns: minmax(0, 1fr);
+    column-gap: unset;
   }
 }
 
 .page-header__links-wrapper {
+  grid-column: 1 / -1;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin-bottom: 1px;
 
   @include max-tablet {
@@ -35,6 +44,7 @@
 
   @include max-mobile {
     margin-bottom: 72px;
+    grid-column: unset;
   }
 }
 
@@ -56,32 +66,24 @@
     font-size: 20px;
     line-height: 20px;
   }
-}
 
-.page-header__main-wrapper {
-  margin-top: -8px;
-  display: grid;
-  grid-template-columns: 396px 500px auto;
-  column-gap: 64px;
-
-  @include max-tablet {
-    min-height: 390px;
-    margin-top: 0;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 30px;
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover:not(:active) {
+      opacity: 0.5;
+    }
   }
 
-  @include max-mobile {
-    min-height: unset;
-    display: block;
-    width: 100%;
+  &:active {
+    opacity: 0.25;
   }
 }
 
-.page-header__main-wrapper img {
+.page-header__wrapper img {
   color: $color-default-white;
+  margin-top: -8px;
 
   @include max-tablet {
+    margin-top: 0;
     height: 100%;
     object-fit: cover;
   }
@@ -91,28 +93,31 @@
   }
 }
 
-.page-header__main-wrapper ul {
-  margin: 0 0 21px 0;
-  padding: 0;
+.page-header__content-wrapper {
   align-self: flex-end;
   justify-self: flex-end;
+  padding-right: 4px;
+  padding-bottom: 45px;
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  color: $color-default-white;
+  text-align: right;
 
   @include max-tablet {
-    display: none;
+    padding-right: 1.5px;
+    padding-bottom: 26px;
+  }
+
+  @include max-mobile {
+    padding-right: 0;
+    padding-bottom: 0;
+    align-self: unset;
+    justify-self: unset;
   }
 }
 
-.page-header__content-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  color: $color-default-white;
-  text-align: right;
-  align-self: flex-end;
-}
-
-.page-header__content-wrapper span {
-  display: block;
+.page-header__content-wrapper p {
+  margin-top: 0;
   margin-bottom: 8px;
   font-family: $ff-bebas-neue;
   font-weight: 400;
@@ -133,21 +138,11 @@
   }
 }
 
-.page-header__title-wrapper {
-  position: relative;
-  margin-bottom: 53px;
-
-  @include max-tablet {
-    margin-bottom: 38px;
-  }
-
-  @include max-mobile {
-    margin-bottom: 41px;
-  }
-}
-
-.page-header__title-wrapper h1 {
-  width: 298px;
+.page-header__content-wrapper h1 {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+  justify-self: flex-end;
+  display: grid;
   margin: 0;
   font-family: $ff-bebas-neue;
   font-weight: 700;
@@ -162,45 +157,84 @@
   }
 
   @include max-mobile {
+    align-self: flex-start;
     font-size: 78px;
     line-height: 78px;
+    -webkit-text-stroke: 4px $color-default-white;
   }
 }
 
-.page-header__title-wrapper p {
-  position: absolute;
-  top: 122px;
-  left: -79px;
+.page-header__content-wrapper h1 * {
+  padding-left: 163px;
+
+  @include max-mobile {
+    padding-left: 120px;
+  }
+}
+
+.page-header__content-wrapper ul {
+  max-height: 95px;
+  overflow: visible;
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+  justify-self: flex-start;
+  align-self: flex-end;
   margin: 0;
-  width: 113px;
+  padding: 0 0 32px 20px;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   font-size: 14px;
   line-height: 21px;
 
   @include max-tablet {
-    top: 88px;
-    left: -26px;
+    padding: 0 0 21px 23px;
   }
 
   @include max-mobile {
-    top: 77px;
-    left: 7px;
+    max-height: unset;
+    overflow: unset;
+    justify-self: flex-end;
+    padding: 77px 177px 16px 0;
   }
 }
 
 .page-header__btn {
+  justify-self: flex-end;
   width: 230px;
-  margin-bottom: 45px;
+  margin-top: 53px;
   padding: 21.5px;
   box-shadow: 0 0 0 2px inset $color-default-white,
     0 0 0 2px $color-default-white;
 
   @include max-tablet {
-    width: 56.5%;
-    margin-bottom: 25px;
+    width: 53%;
+    margin-top: 38px;
   }
 
   @include max-mobile {
-    margin-bottom: 0;
     width: 100%;
+    margin-top: 41px;
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover:not(:active) {
+      background: $color-default-white;
+      color: $color-sapphire;
+      box-shadow: 0 0 0 2px inset $color-crimson,
+        0 0 0 2px $color-crimson;
+    }
+  }
+
+  &:active {
+    opacity: 0.25;
+  }
+}
+
+.page-header__optional-links {
+  transform: translateX(5px);
+
+  @include max-tablet {
+    display: none;
   }
 }

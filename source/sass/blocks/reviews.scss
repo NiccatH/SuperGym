@@ -21,26 +21,41 @@
 }
 
 .reviews__wrapper {
-  padding: 0 300px 120px 300px;
+  padding: 0 244px 120px 244px;
 
   @include max-tablet {
-    padding: 0 101px 100px 101px;
+    padding: 0 45px 100px 45px;
   }
 
   @include max-mobile {
-    padding: 0 47px 70px 47px;
+    padding: 0 15px 70px 15px;
   }
 }
 
-.reviews__card {
-  padding: 62px 62px 52px 62px;
-  color: $color-default-white;
-  background: $color-resolution-blue;
-  box-shadow: 0 0 40px $color-resolution-blue-opacity;
+.reviews__slider-wrapper {
+  position: relative;
+  padding: 0 56px;
 
   @include max-tablet {
-    padding-left: 65px;
-    padding-right: 65px;
+    padding: 0 56px;
+  }
+
+  @include max-mobile {
+    padding: 0 32px;
+  }
+}
+
+.reviews__swiper {
+  box-shadow: 0 0 40px 0 $color-resolution-blue-opacity;
+}
+
+.reviews__card {
+  padding: 61px 56px 51px 62px;
+  color: $color-default-white;
+  background: $color-resolution-blue;
+
+  @include max-tablet {
+    padding: 61px 57px 53px 65px;
   }
 
   @include max-mobile {
@@ -51,16 +66,16 @@
 .reviews__card blockquote {
   margin: 0;
   display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 12.5px 28px;
+  grid-template-columns: 80px minmax(0, 1fr);
+  gap: 13px 28px;
 
   @include max-mobile {
-    grid-template-columns: 1fr 1fr;
-    gap: 16px 10px;
+    grid-template-columns: minmax(68px, 1fr) minmax(0, 1fr);
+    gap: 16px 22px;
   }
 }
 
-.reviews__card div {
+.reviews__card-img {
   border-radius: 50%;
   width: 80px;
   height: 80px;
@@ -73,6 +88,7 @@
     height: 68px;
     grid-column: unset;
     grid-row: unset;
+    transform: translateX(7px);
     justify-self: flex-end;
   }
 }
@@ -83,14 +99,45 @@
   font-weight: 700;
   font-size: 20px;
   line-height: 30px;
+  word-break: break-all;
 
   @include max-mobile {
     margin-top: 0;
-    padding-left: 6.5px;
     padding-top: 8px;
     line-height: 26px;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.reviews__text-container {
+  max-height: 93px;
+  grid-column: 2 / 3;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: $color-spindle transparent;
+
+  @include max-mobile {
+    max-height: 182px;
+    text-align: center;
+    grid-column: 1 / -1;
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-spindle;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: $color-light-slate-grey;
   }
 }
 
@@ -99,10 +146,4 @@
   margin-bottom: 5px;
   font-size: 16px;
   line-height: 22px;
-  grid-column: 2 / 3;
-
-  @include max-mobile {
-    text-align: center;
-    grid-column: 1 / -1;
-  }
 }

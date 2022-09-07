@@ -1,0 +1,50 @@
+.slider-button {
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover:not(:active) * {
+      stroke: $color-crimson;
+    }
+  }
+
+  &:active * {
+    opacity: 0.25;
+  }
+
+  &--next {
+    right: -2px;
+
+    @include vp-1366 {
+      right: -2px;
+    }
+
+    @include min-desktop {
+      right: 15px;
+    }
+
+    @include max-mobile {
+      right: -2px;
+    }
+  }
+
+  &--prev {
+    left: -2px;
+
+    @include vp-1366 {
+      left: -2px;
+    }
+
+    @include min-desktop {
+      left: 15px;
+    }
+
+    @include max-mobile {
+      left: -2px;
+    }
+  }
+}
+
+.slider-button > svg {
+  @include max-mobile {
+    width: 10px;
+    height: 19px;
+  }
+}

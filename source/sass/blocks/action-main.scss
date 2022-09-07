@@ -76,6 +76,16 @@
   &::after {
     background: $color-default-white;
   }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover:not(:active) {
+      opacity: 0.5;
+    }
+  }
+
+  &:active {
+    opacity: 0.25;
+  }
 }
 
 .action-main img {

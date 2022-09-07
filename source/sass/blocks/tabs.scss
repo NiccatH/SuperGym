@@ -61,7 +61,7 @@
   }
 }
 
-.tabs__nav button {
+.tabs__nav-item {
   position: relative;
   padding: 0;
   font-size: 20px;
@@ -81,11 +81,13 @@
     line-height: 24px;
   }
 
-  &.is-active {
+  &--is-active {
     color: $color-sapphire;
+    cursor: default;
+    pointer-events: none;
   }
 
-  &.is-active::after {
+  &--is-active::after {
     content: "";
     position: absolute;
     left: 0;
@@ -98,6 +100,18 @@
       bottom: -14px;
     }
   }
+
+  &:not(&--is-active) {
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover:not(:active) {
+        color: $color-default-black;
+      }
+    }
+
+    &:active {
+      opacity: 0.25;
+    }
+  }
 }
 
 .tabs__content ul {
@@ -107,6 +121,10 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
+
+  &:not([data-active]) {
+    display: none;
+  }
 
   @include max-tablet {
     display: block;
@@ -182,7 +200,7 @@
 
 .tabs__content p {
   margin-top: 0;
-  margin-bottom: 66px;
+  margin-bottom: 65px;
   font-size: 16px;
   line-height: 24px;
   color: $color-chambray;
@@ -198,73 +216,68 @@
   color: $color-sapphire;
   box-shadow: 0 0 0 1px inset $color-sapphire,
     0 0 0 1px $color-sapphire;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover:not(:active) {
+      opacity: 0.5;
+    }
+  }
+
+  &:active {
+    opacity: 0.25;
+  }
 }
 
-.tabs__content div {
-  position: relative;
+.tabs__price {
+  margin-bottom: 35px;
   display: grid;
   grid-template-columns: repeat(2, min-content);
-  align-items: center;
-  column-gap: 16px;
-  margin-bottom: 34px;
-  margin-left: -1px;
+  column-gap: 15px;
+
+  @include max-mobile {
+    margin-bottom: 30px;
+  }
+}
+
+.tabs__price span {
+  position: relative;
   font-weight: 700;
   font-size: 60px;
   line-height: 90px;
   color: $color-egyptian-blue;
-  text-align: left;
   z-index: 0;
-
-  @include max-tablet {
-    grid-template-columns: 1fr 30px;
-    column-gap: 14px;
-  }
-
-  @include max-mobile {
-    margin-bottom: 30px;
-    grid-template-columns: 1fr 24px;
-  }
 
   @include max-mobile {
     font-size: 48px;
     line-height: 72px;
+    transform: translateX(4px);
   }
 
   &::after {
     content: attr(data-price);
     position: absolute;
-    bottom: -6px;
-    left: -18px;
+    top: -31%;
+    left: -15.5%;
     font-weight: 700;
     font-size: 100px;
-    line-height: 150px;
+    line-height: 100px;
     color: $color-whisper;
     opacity: 0.48;
     z-index: -1;
 
-    @include max-tablet {
-      bottom: -8px;
-      left: -20px;
-    }
-
     @include max-mobile {
-      bottom: -4px;
-      left: -14px;
       font-size: 80px;
-      line-height: 120px;
+      line-height: 80px;
     }
   }
 }
 
-.tabs__content div > svg {
+.tabs__price svg {
+  align-self: center;
+  z-index: 1;
+
   @include max-mobile {
     width: 24px;
     height: 33px;
-  }
-}
-
-.tabs__content div > span {
-  @include max-mobile {
-    transform: translateX(4px);
   }
 }
