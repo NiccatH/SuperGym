@@ -65,6 +65,7 @@ const onPhoneKeyDown = function (evt) {
 
 const initPhoneValidation = () => {
   phoneField.setAttribute('maxLength', '16');
+  phoneField.setAttribute('pattern', '.{16}');
   phoneField.addEventListener('keydown', onPhoneKeyDown);
   phoneField.addEventListener('input', onPhoneInput, false);
   phoneField.addEventListener('paste', onPhonePaste, false);
